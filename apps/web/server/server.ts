@@ -1,12 +1,11 @@
 import { router } from "./trpc";
-import { createHTTPServer } from "@trpc/server/adapters/standalone";
+import { Auth } from "./router/auth.router";
+import { contentRoute } from "./router/content.router";
 
-const appRouter = router({});
-
-const server = createHTTPServer({
-  router: appRouter,
+export const appRouter = router({
+  auth: Auth,
+  content:contentRoute
 });
 
-server.listen(3000);
 
 export type AppRouter = typeof appRouter;
