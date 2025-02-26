@@ -31,11 +31,13 @@ const ContentSchema = new mongoose.Schema(
     },
     link: {
       type: String,
-      required: true,
     },
     title: {
       type: String,
       required: true,
+    },
+    content: {
+      type: String,
     },
     tags: [
       {
